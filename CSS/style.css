@@ -1,3 +1,4 @@
+@import url("reset.css");
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
 
 /* screen-reader only */
@@ -11,6 +12,10 @@
     width: 1px;
 }
 
+* {
+    transition: 300ms;
+}
+
 :root {
     --Red: hsl(1, 90%, 64%);
     --Blue: hsl(219, 85%, 26%);
@@ -19,6 +24,179 @@
     --Light-grayish-blue-1: hsl(211, 68%, 94%);
     --Light-grayish-blue-2: hsl(205, 33%, 90%);
     --Grayish-blue: hsl(219, 14%, 63%);
+    --Gray: hsl(222, 6%, 39%);
     --Dark-grayish-blue: hsl(219, 12%, 42%);
     --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: var(--Very-light-grayish-blue);
+}
+
+main {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White);
+    width: 41rem;
+    height: auto;
+    padding: 1em 2em;
+    border-radius: 1em;
+    gap: 1em;
+}
+
+/* card header */
+
+.card__header-container {
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .header__title {
+        color: var(--Very-dark-blue);
+        font-weight: 800;
+        font-size: 1.5rem;
+        display: inline-flex;
+    }
+
+    .header__quantity {
+        font-size: 0.9rem;
+        color: var(--Very-light-grayish-blue);
+        padding: 0.25em 0.75em;
+        background-color: var(--Blue);
+        border-radius: 0.5em;
+        margin-left: 1em;
+    }
+
+    .header__button {
+        all: unset;
+        color: var(--Dark-grayish-blue);
+    }
+
+/* notifications */
+
+.card__notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+    .notification {
+        display: grid;
+        grid-template: auto auto auto / auto 1fr auto;
+        padding: 0.75em;
+        align-items: center;
+        border-radius: 0.5em;
+    }
+
+        .notification__avatar {
+            padding: 0.5em;
+            height: 2.75em;
+            grid-area: 1 / 1 / span 2 / span 1;
+        }
+
+        .notification__title {
+            margin: 0 0.5em;
+            grid-area: 1 / 2 / span 1 / span 1;
+            line-height: 1.3em;
+        }
+            .title__name {
+                font-weight: 800;
+                color: var(--Very-dark-blue);
+            }
+
+            .title__activity {
+                color: var(--Gray);
+            }
+            
+            .title__link {
+                text-decoration: none;
+                color: var(--Dark-grayish-blue);
+                font-weight: 800;
+            }
+
+
+        .notification__time {
+            grid-area: 2 / 2 / span 1 / span 1;
+            color: var(--Grayish-blue);
+            margin: 0 0.5em;
+            align-self: flex-start;
+        }
+
+        .notification__message {
+            grid-area: 3 / 2 / span 1 / span 2;
+            color: var(--Dark-grayish-blue);
+            padding: 1em;
+            border: 1px solid var(--Light-grayish-blue-1);
+            border-radius: 2px;
+            margin: 0 0.5em;
+            line-height: 1.3em;
+        }
+
+        .notification__image {
+            height: 2.75em;
+            grid-area: 1 / 3 / span 2 / span 1;
+        }
+
+/* unread status */
+
+.notification--unread {
+    background-color: var(--Very-light-grayish-blue);
+}
+
+.notification--unread > .notification__title::after {
+    content: "•";
+    font-weight: 800;
+    color: var(--Red);
+}
+
+/* hover status */
+
+.notification:hover {
+    cursor: pointer;
+    background-color: var(--Very-light-grayish-blue);
+}
+
+.notification--unread:hover {
+    background-color: var(--Light-grayish-blue-1);
+}
+
+.header__button:hover,
+.title__name:hover,
+.title__link:hover {
+    cursor: pointer;
+    color: var(--Blue);
+}
+
+.notification__message:hover {
+    background-color: var(--Light-grayish-blue-1);
+    cursor: pointer;
+}
+
+.notification__image:hover,
+.notification__avatar:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    filter: saturate(0.5);
+}
+
+@media screen and (max-width: 750px) {
+    
+    main {
+        align-content: stretch;
+    }
+
+    .card-container {
+        width: auto;
+    }
 }
