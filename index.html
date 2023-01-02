@@ -7,7 +7,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Notifications page</title>
-  <link rel="stylesheet" href="CSS/reset.css">
   <link rel="stylesheet" href="CSS/style.css">
 
 </head>
@@ -15,30 +14,30 @@
   <main>
     <h1 class="sr-only">Notifications page</h1>
     <section class="card-container">
-      <div class="card__header">
-        <h2 class="card__header_title">
+      <div class="card__header-container">
+        <h2 class="header__title">
           Notifications 
-          <span class="card__header_quantity">
+          <span class="header__quantity" id="quantity">
             3
           </span>
         </h2>
-        <buttton class="card__header_button">
+        <button class="header__button" id="button">
           Mark all as read
-        </buttton>
+        </button>
       </div>
 
       <div class="card__notifications-container">
-        <div class="notification">
+        <div class="notification notification--unread">
           <img class="notification__avatar" src="assets/images/avatar-mark-webber.webp" alt="">
           <h3 class="notification__title">
             <span class="title__name">Mark Webber </span>
             <span class="title__activity">reacted to your recent post </span>
-            <span class="title__reference">My first tournament today!</span>
+            <span><a class="title__link" href="#">My first tournament today!</a></span>
           </h3>
           <div class="notification__time">1m ago</div>
         </div>
 
-        <div class="notification">
+        <div class="notification notification--unread">
           <img class="notification__avatar" src="assets/images/avatar-angela-gray.webp" alt="">
           <h3 class="notification__title">
             <span class="title__name">Angela Gray </span>
@@ -47,12 +46,12 @@
           <div class="notification__time">5m ago</div>
         </div>
       
-        <div class="notification">
+        <div class="notification notification--unread">
           <img class="notification__avatar" src="assets/images/avatar-jacob-thompson.webp" alt="">
           <h3 class="notification__title">
             <span class="title__name">Jacob Thompson </span>
             <span class="title__activity">has joined your group </span>
-            <span class="title__reference">Chess Club</span>
+            <span><a class="title__link" href="#">Chess Club</a></span>
           </h3>
           <div class="notification__time">1 day ago</div>
         </div>
@@ -74,7 +73,7 @@
             <span class="title__activity">commented on your picture</span>
           </h3>
           <div class="notification__time">1 week ago</div>
-          <img class="nottification__image" src="assets/images/image-chess.webp" alt="">
+          <img class="notification__image" src="assets/images/image-chess.webp" alt="">
         </div>
       
         <div class="notification">
@@ -82,7 +81,7 @@
           <h3 class="notification__title">
             <span class="title__name">Nathan Peterson </span>
             <span class="title__activity">reacted to your recent post </span>
-            <span class="title__reference">5 end-game strategies to increase your win rate</span>
+            <span><a class="title__link" href="#">5 end-game strategies to increase your win rate</a></span>
           </h3>
           <div class="notification__time">2 weeks ago</div>
         </div>
@@ -92,16 +91,13 @@
           <h3 class="notification__title">
             <span class="title__name">Anna Kim</span>
             <span class="title__activity">left the group</span>
-            <span class="title__reference">Chess Club</span>
+            <span><a class="title__link" href="#">Chess Club</a></span>
           </h3>
           <div class="notification__time">2 weeks ago</div>
         </div>
       </div>
     </section>
+    <script src="js/main.js"></script>
   </main>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
