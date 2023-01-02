@@ -37,10 +37,13 @@ body {
 }
 
 main {
-    display: grid;
+    /* display: grid;
     place-content: center;
-    height: 100vh;
-    overflow: scroll;
+    height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
 }
 .card-container {
     display: flex;
@@ -199,11 +202,5 @@ main {
 
     .card-container {
         width: auto;
-    }
-}
-
-@media screen and (max-height: 800px) {
-    main {
-        height: 100%;
     }
 }
