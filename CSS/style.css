@@ -40,8 +40,8 @@ main {
     display: grid;
     place-content: center;
     height: 100vh;
+    overflow: scroll;
 }
-
 .card-container {
     display: flex;
     flex-direction: column;
@@ -190,7 +190,8 @@ main {
     filter: saturate(0.5);
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 750px)
+ {
     
     main {
         align-content: stretch;
@@ -198,5 +199,11 @@ main {
 
     .card-container {
         width: auto;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    main {
+        height: 100%;
     }
 }
